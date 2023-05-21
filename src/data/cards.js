@@ -407,15 +407,15 @@ export const modules = [
   {
       module: 'Action (set A)',
       //image: 'action1.png'
-      image: '../data/img/action1.png'
+      image: '/img/action1.png'
   },
   {
       module: 'Action (set B)',
-      image: '../data/img/drive.png'
+      image: './data/img/drive.png'
   },
   {
       module: 'Animal (set A)',
-      image: '../data/img/lion.png'
+      image: '/data/img/lion.png'
   },
   {
       module: 'Animal (set B)',
@@ -423,11 +423,11 @@ export const modules = [
   },
   {
       module: 'Clothes',
-      image: '../data/img/pants.png'
+      image: 'pants.png'
   },
   {
       module: 'Emotions',
-      image: '../data/img/emotion.png'
+      image: './img/emotion.png'
   },
   {
       module: 'Food',
