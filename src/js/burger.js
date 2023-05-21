@@ -2,6 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("burger").addEventListener("click", function () {
         document.querySelector(".header").classList.toggle("open");
+        document.body.classList.toggle('stop-scrolling');
         document.querySelector(".blur").classList.toggle("background_blur");
     })
 });
@@ -30,12 +31,14 @@ document.getElementById("burger").addEventListener('click', event => {
 document.body.addEventListener('click', event => {
     if (event._isClickWithInMenu) return;
     document.querySelector(".header").classList.remove("open");
+    document.body.classList.remove('stop-scrolling');
     document.querySelector(".blur").classList.remove("background_blur");
 });
 
 document.querySelector('.nav').addEventListener('click', function (event) {
     if (event.target.closest('.header_link')) {
         document.querySelector(".header").classList.remove("open");
+        document.body.classList.remove('stop-scrolling');
         document.querySelector(".blur").classList.remove("background_blur");
     }
 });

@@ -6,6 +6,11 @@ body {
     font-family: 'Comfortaa', cursive;
 }
 
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
 .background_blur {
     height: 100%;
     position: fixed;
@@ -17,28 +22,28 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     background-color: rgba(145, 213, 224, .7);
     padding-right: 43px;
     padding-left: 43px;
 }
 
-.switch{
+.switch {
     display: flex;
     font-size: 25px;
     color: #513216;
-    margin-top: 35px;
+    margin-top: 25px;
     margin-left: 10px;
 }
 
-.switch h3{
+.switch h3 {
     margin: 0px;
     line-height: 40px;
     padding-right: 10px;
     width: 86px;
 }
 
-.switch_input{
+.switch_input {
     position: relative;
     width: 80px;
     height: 40px;
@@ -49,11 +54,11 @@ body {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
 }
 
-.switch_input:checked{
+.switch_input:checked {
     background: #4b8e0a;
 }
 
-.switch_input:before{
+.switch_input:before {
     content: '';
     position: absolute;
     width: 40px;
@@ -64,17 +69,17 @@ body {
     background: #ddf2f5;
     transform: scale(1.1);
     box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-    transition: .5s;
+    transition: all 0.3s linear;
 }
 
-.switch_input:checked:before{
+.switch_input:checked:before {
     left: 40px;
 }
 
 /*burger*/
 .burger {
     display: block;
-    margin-top: 30px;
+    margin-top: 20px;
     background-color: transparent;
     border: none;
     z-index: 2;
@@ -112,7 +117,7 @@ body {
     padding-top: 85px;
 }
 
-.header_link{
+.header_link {
     font-size: 25px;
     text-decoration: none;
     padding: 0;
@@ -129,8 +134,8 @@ body {
 
 }
 
-.header_link:hover{
-    background-color:#ddf2f5;
+.header_link:hover {
+    background-color: #ddf2f5;
     color: #1c8dc5;
 }
 
@@ -155,20 +160,56 @@ body {
         0 1px 1px #ddf2f5,
         -1px 0 1px #ddf2f5,
         0 -1px 1px #ddf2f5;
-    margin: 10px;
+    margin: 0px;
     margin-left: -140px;
 }
+
+
+/*start button*/
+.start_game {
+    height: 60px;
+    position: relative;
+}
+
+.start_button {
+    cursor: pointer;
+    text-decoration: none;
+    height: 60px;
+    width: 160px;
+    color: #ddf2f5;
+    background-color: #1c8dc5;
+    font-size: 25px;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 30px;
+    margin-left: 15px;
+    border: none;
+    transition: all 0.3s linear;
+
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.start_button:hover {
+    background-color: #4b8e0a;
+}
+
+/**/
 
 .main {
     width: 80%;
     margin: 20px auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 50px 30px;
+    gap: 30px 30px;
 }
 
 .words_card {
     width: 240px;
+    height: 287px;
     background-color: #ddf2f5;
     border: 2px solid #513216;
     border-radius: 20px;
@@ -178,9 +219,16 @@ body {
     transition: transform, 0.3s, box-shadow, 0.5s;
 }
 
-.words_card:hover{
+.words_card:hover {
     transform: translateY(-10px);
     box-shadow: 5px 10px 10px 5px rgba(252, 252, 252, 0.6);
+    transition: transform, 0.3s, box-shadow, 0.5s;
+    cursor: pointer;
+}
+
+.word:hover {
+    transform: translateY(0px);
+    box-shadow: 5px 5px 5px 5px #1c8dc5;
     transition: transform, 0.3s, box-shadow, 0.5s;
     cursor: pointer;
 }
@@ -199,4 +247,112 @@ body {
     color: #4b8e0a;
     margin: 10px;
 
+}
+
+.word img{
+    height: 160px;
+    width: 240px;
+}
+
+.word_transcript{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px;
+}
+
+.button_rotate{
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+    background-image: url(./src/data/img/repeat.svg);
+    background-size: cover;
+    height: 40px;
+    width: 40px;
+    border: none;
+}
+
+.button_rotate:hover{
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(360deg); }
+}
+
+/*.word > div{
+    width: 222px;
+    height: 148px;
+}*/
+
+/*.word_image{
+    margin-top: 0px;
+    width: 222px;
+    height: 148px;
+}*/
+
+
+.rotatey-animation {
+    animation: rotateY 10s infinite;
+  }
+
+  @keyframes rotateY {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .headline {
+        margin-left: -60px;
+    }
+
+    .main {
+        width: 80%;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px 30px;
+    }
+
+    .words_card {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .header {
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 30px;
+    }
+
+    .headline {
+        display: none;
+    }
+
+    .main {
+        width: 80%;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px 30px;
+    }
+
+    .words_card {
+        margin: 0 auto;
+    }
 }
