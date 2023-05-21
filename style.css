@@ -1,0 +1,202 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(./src/data/img/background.jpg);
+    background-size: cover;
+    font-family: 'Comfortaa', cursive;
+}
+
+.background_blur {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(41, 41, 41, 0.6);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background-color: rgba(145, 213, 224, .7);
+    padding-right: 43px;
+    padding-left: 43px;
+}
+
+.switch{
+    display: flex;
+    font-size: 25px;
+    color: #513216;
+    margin-top: 35px;
+    margin-left: 10px;
+}
+
+.switch h3{
+    margin: 0px;
+    line-height: 40px;
+    padding-right: 10px;
+    width: 86px;
+}
+
+.switch_input{
+    position: relative;
+    width: 80px;
+    height: 40px;
+    appearance: none;
+    background: #1c8dc5;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.switch_input:checked{
+    background: #4b8e0a;
+}
+
+.switch_input:before{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #ddf2f5;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+
+.switch_input:checked:before{
+    left: 40px;
+}
+
+/*burger*/
+.burger {
+    display: block;
+    margin-top: 30px;
+    background-color: transparent;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s linear;
+    text-decoration: none;
+    border: 0px;
+    background-image: url(./src/data/img/burger.jpeg);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+}
+
+.burger img {
+    height: 40px;
+    width: 50px;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: rgba(145, 213, 224, .9);
+    border-radius: 10px;
+    padding-top: 0px;
+    padding-left: 0px;
+    transition: transform .5s, visibility .5s;
+    will-change: transform;
+    padding-top: 85px;
+}
+
+.header_link{
+    font-size: 25px;
+    text-decoration: none;
+    padding: 0;
+    padding-top: 10px;
+    line-height: 140%;
+    color: #ddf2f5;
+    padding: 10px;
+    background-color: #1c8dc5;
+    border-radius: 20px;
+    width: 80%;
+    margin-left: 22px;
+    margin-top: 10px;
+    transition: all 0.3s linear;
+
+}
+
+.header_link:hover{
+    background-color:#ddf2f5;
+    color: #1c8dc5;
+}
+
+.header.open .burger_logo {
+    transform: translateX(-100%);
+    visibility: visible;
+}
+
+.header.open .nav {
+    transform: translateX(-100%);
+    visibility: visible;
+}
+
+
+/**/
+
+.headline {
+    font-family: 'Pacifico', cursive;
+    font-size: 55px;
+    color: #1c8dc5;
+    text-shadow: 1px 0 1px #ddf2f5,
+        0 1px 1px #ddf2f5,
+        -1px 0 1px #ddf2f5,
+        0 -1px 1px #ddf2f5;
+    margin: 10px;
+    margin-left: -140px;
+}
+
+.main {
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px 30px;
+}
+
+.words_card {
+    width: 240px;
+    background-color: #ddf2f5;
+    border: 2px solid #513216;
+    border-radius: 20px;
+    text-align: center;
+    color: #513216;
+    font-size: 25px;
+    transition: transform, 0.3s, box-shadow, 0.5s;
+}
+
+.words_card:hover{
+    transform: translateY(-10px);
+    box-shadow: 5px 10px 10px 5px rgba(252, 252, 252, 0.6);
+    transition: transform, 0.3s, box-shadow, 0.5s;
+    cursor: pointer;
+}
+
+.words_card img {
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+}
+
+.words_card h4 {
+    margin: 0;
+}
+
+.words_card h5 {
+    color: #4b8e0a;
+    margin: 10px;
+
+}
