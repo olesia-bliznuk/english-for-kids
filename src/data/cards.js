@@ -171,7 +171,7 @@ export const cards = [
     },
     {
       word: 'giraffe',
-      translation: 'жирафа',
+      translation: 'жираф',
       image: './data/img/giraffe.jpg',
       audioSrc: './data/audio/giraffe.mp3'
     },
@@ -304,100 +304,100 @@ export const cards = [
     {
       word: 'cake',
       translation: 'торт',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/cake.jpeg',
+      audioSrc: './data/audio/cake.mp3'
     },
     {
       word: 'egg',
       translation: 'яйцо',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/eggs.jpeg',
+      audioSrc: './data/audio/egg.mp3'
     },
     {
       word: 'milk',
       translation: 'молоко',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/milk.jpeg',
+      audioSrc: './data/audio/milk.mp3'
     },
     {
       word: 'apple',
       translation: 'яблоко',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/apple.jpeg',
+      audioSrc: './data/audio/apple.mp3'
     },
     {
       word: 'banana',
       translation: 'банан',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/banana.jpeg',
+      audioSrc: './data/audio/banana.mp3'
     },
     {
       word: 'grape',
       translation: 'виноград',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/grape.jpeg',
+      audioSrc: './data/audio/grape.mp3'
     },
     {
       word: 'rice',
       translation: 'рис',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/rice.jpeg',
+      audioSrc: './data/audio/rice.mp3'
     },
     {
       word: 'butter',
       translation: 'масло',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      image: './data/img/butter.jpeg',
+      audioSrc: './data/audio/butter.mp3'
     }
   ],
   [
     {
       word: 'bus',
-      translation: 'смех',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'автобус',
+      image: './data/img/bus.jpeg',
+      audioSrc: './data/audio/bus.mp3'
     },
     {
       word: 'car',
-      translation: 'смех',
-      image: '../data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'машина',
+      image: '../data/img/car.jpeg',
+      audioSrc: './data/audio/car.mp3'
     },
     {
       word: 'plane',
-      translation: 'смех',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'самолет',
+      image: './data/img/plane.jpeg',
+      audioSrc: './data/audio/plane.mp3'
     },
     {
       word: 'train',
-      translation: 'смех',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'поезд',
+      image: './data/img/train.jpeg',
+      audioSrc: './data/audio/train.mp3'
     },
     {
       word: 'truck',
-      translation: 'смех',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'грузовик',
+      image: './data/img/truck.jpeg',
+      audioSrc: './data/audio/truck.mp3'
     },
     {
       word: 'helicopter',
-      translation: 'смех',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'вертолет',
+      image: './data/img/helicopter.jpeg',
+      audioSrc: './data/audio/helicopter.mp3'
     },
     {
       word: 'bicycle',
-      translation: 'смех',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'велосипед',
+      image: './data/img/bike.jpeg',
+      audioSrc: './data/audio/bicycle.mp3'
     },
     {
       word: 'ship',
-      translation: 'смех',
-      image: './data/img/laugh.jpg',
-      audioSrc: './data/audio/laugh.mp3'
+      translation: 'корабль',
+      image: './data/img/ship.jpeg',
+      audioSrc: './data/audio/ship.mp3'
     }
 
   ],

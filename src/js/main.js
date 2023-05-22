@@ -1,7 +1,7 @@
 import { cards } from "../data/cards.js";
 import { modules } from "../data/cards.js";
 import { checkGame } from './checkGame.js';
-import { audioWord } from './audio.js';
+import { audioWord, rotateWord } from './wordFuncrions.js';
 
 function createNavItem(text, id, nav) {
     const navLink = document.createElement('a');
@@ -54,28 +54,20 @@ function mainPageOpen() {
 function openCategory(id) {
     const main = document.getElementById('main');
     main.classList.add('words_page');
-
     main.innerHTML = '';
     for (let i = 0; i < cards[id].length; i++) {
         const wordsCard = document.createElement('div');
         wordsCard.id = `${i}-${id}`;
         wordsCard.classList.add('words_card');
         wordsCard.classList.add('word');
-        const div = document.createElement('div');
-        const imgCard = document.createElement('img');
-        imgCard.classList.add('word_image');
-        const divWord = document.createElement('div');
-        divWord.classList.add('word_transcript');
-        const h4Card = document.createElement('h4');
-        h4Card.textContent = cards[id][i].word;
-        const button = document.createElement('button');
-        button.classList.add('button_rotate');
-        imgCard.src = cards[id][i].image;
-        div.append(imgCard);
-        wordsCard.append(div);
-        divWord.append(h4Card);
-        divWord.append(button);
-        wordsCard.append(divWord);
+        wordsCard.innerHTML = `<div class="front">
+        <img class="word_image" src="${cards[id][i].image}">
+        <div class="word_transcript"><h4>${cards[id][i].word}</h4>
+        <button class="button_rotate"></button></div>
+        </div>
+        <div class="back"><img class="word_image" src="${cards[id][i].image}">
+        <div class="word_transcript"><h4>${cards[id][i].translation}</h4>
+        </div>`;
         main.append(wordsCard);
     }
     checkGame();
@@ -103,10 +95,12 @@ document.addEventListener('click', (event) => {
             else if (+target.id > 0 && +target.id < 9) openCategory(target.id);
         }
     }
-    if (event.target.closest('.buttun_rotate')){
-
-       // wordsCard.classList.add('rotatey-animation');
-    }else if (event.target.closest('.word')) {
+    if (event.target.closest('.button_rotate')) {
+        const target = event.target.closest('.word');
+        const wordTrans = target.querySelector(".word_transcript");
+        audioWord(cards[target.id.split('-')[1]][event.target.closest('.word').id.split('-')[0]]);
+        target.classList.add('word_active');
+    } else if (event.target.closest('.word')) {
         const target = event.target.closest('.word');
         const numPage = target.id.split('-')[1];
         audioWord(cards[numPage][target.id.split('-')[0]]);

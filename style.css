@@ -17,6 +17,7 @@ body {
     top: 0;
     width: 100%;
     background: rgba(41, 41, 41, 0.6);
+    z-index: 8;
 }
 
 .header {
@@ -54,6 +55,10 @@ body {
     box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
 }
 
+.switch_input:hover{
+    cursor: pointer;
+}
+
 .switch_input:checked {
     background: #4b8e0a;
 }
@@ -82,7 +87,7 @@ body {
     margin-top: 20px;
     background-color: transparent;
     border: none;
-    z-index: 2;
+    z-index: 100;
     cursor: pointer;
     padding: 0;
     transition: all 0.3s linear;
@@ -115,6 +120,7 @@ body {
     transition: transform .5s, visibility .5s;
     will-change: transform;
     padding-top: 85px;
+    z-index: 10;
 }
 
 .header_link {
@@ -137,6 +143,7 @@ body {
 .header_link:hover {
     background-color: #ddf2f5;
     color: #1c8dc5;
+    cursor: pointer;
 }
 
 .header.open .burger_logo {
@@ -249,18 +256,18 @@ body {
 
 }
 
-.word img{
+.word img {
     height: 160px;
     width: 240px;
 }
 
-.word_transcript{
+.word_transcript {
     display: flex;
     justify-content: space-between;
     padding: 30px 15px;
 }
 
-.button_rotate{
+.button_rotate {
     cursor: pointer;
     background-color: transparent;
     text-decoration: none;
@@ -271,43 +278,49 @@ body {
     border: none;
 }
 
-.button_rotate:hover{
+.button_rotate:hover {
     animation-name: rotate;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
-@keyframes rotate{
-    from{ transform: rotate(-360deg); }
-    to{ transform: rotate(360deg); }
+@keyframes rotate {
+    from {
+        transform: rotate(-360deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-/*.word > div{
-    width: 222px;
-    height: 148px;
-}*/
 
-/*.word_image{
-    margin-top: 0px;
-    width: 222px;
-    height: 148px;
-}*/
+/*rotate card*/
 
+.front,
+.back{
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+}
 
-.rotatey-animation {
-    animation: rotateY 10s infinite;
-  }
+.front{
+    transform: perspective(600px) rotateY(0deg);
+}
 
-  @keyframes rotateY {
-    from {
-      transform: rotateY(0deg);
-    }
-    to {
-      transform: rotateY(360deg);
-    }
-  }
-  
+.back{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.word_active:hover > .front{
+    transform: perspective(600px) rotateY(-180deg);
+}
+.word_active:hover > .back{
+    transform: perspective(600px) rotateY(0deg);
+}
+
 
 @media (min-width: 768px) and (max-width: 1279px) {
     .header {
