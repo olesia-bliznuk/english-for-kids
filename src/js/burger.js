@@ -19,11 +19,6 @@ document.getElementById("nav").addEventListener('click', event => {
     event._isClickWithInMenu = true;
 });
 
-// Закрыть меню при клике на ссылку
-// document.querySelector('.header_link').addEventListener('click', event => {
-//     event._isClickWithInMenu = true;
-// });
-
 document.getElementById("burger").addEventListener('click', event => {
     event._isClickWithInMenu = true;
 });

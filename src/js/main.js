@@ -60,6 +60,9 @@ function openCategory(id) {
         wordsCard.id = `${i}-${id}`;
         wordsCard.classList.add('words_card');
         wordsCard.classList.add('word');
+        wordsCard.addEventListener('mouseleave', () => {
+            wordsCard.classList.remove('word_active');
+        });
         wordsCard.innerHTML = `<div class="front">
         <img class="word_image" src="${cards[id][i].image}">
         <div class="word_transcript"><h4>${cards[id][i].word}</h4>
@@ -100,7 +103,7 @@ document.addEventListener('click', (event) => {
         const wordTrans = target.querySelector(".word_transcript");
         audioWord(cards[target.id.split('-')[1]][event.target.closest('.word').id.split('-')[0]]);
         target.classList.add('word_active');
-    } else if (event.target.closest('.word')) {
+    } else if (event.target.closest('.front')) {
         const target = event.target.closest('.word');
         const numPage = target.id.split('-')[1];
         audioWord(cards[numPage][target.id.split('-')[0]]);

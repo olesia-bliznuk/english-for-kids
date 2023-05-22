@@ -6,6 +6,5 @@ export function audioWord(word){
 }
 
 export function rotateWord(word){
-    
     word.classList.add('rotatey-animation');
 }

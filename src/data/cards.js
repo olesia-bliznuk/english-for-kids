@@ -360,7 +360,7 @@ export const cards = [
     {
       word: 'car',
       translation: 'машина',
-      image: '../data/img/car.jpeg',
+      image: './data/img/car.jpeg',
       audioSrc: './data/audio/car.mp3'
     },
     {
