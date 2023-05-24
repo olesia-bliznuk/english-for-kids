@@ -392,6 +392,91 @@ body {
     transform: translateY(0) rotate(-45deg);
 }
 
+
+.remove_translation button{
+    display: none;
+}
+
+.remove_translation h4{
+    display: none;
+}
+
+/*statictics*/
+
+.no-grid{
+   display: block;
+}
+
+.stat_table{
+    background-color: #1c8dc5;
+    margin: auto; 
+    text-align: center;
+    border-radius: 5px;
+    color: #513216;
+    font-size: 25px;
+}
+
+.stat_table th{
+    background-color: rgba(145, 213, 224, .4);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.stat_table td{
+    background-color: rgba(145, 213, 224, .7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.stat_table tr:hover{
+    background-color: #ddf2f5;
+}
+
+.cont_btn{
+    margin: 20px auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.btn_reset{
+    cursor: pointer;
+    text-decoration: none;
+    height: 60px;
+    width: 200px;
+    color: #ddf2f5;
+    background-color: #1c8dc5;
+    font-size: 25px;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 30px;
+    border: none;
+    transition: all 0.3s linear;
+}
+
+.btn_diff_words{
+    cursor: pointer;
+    text-decoration: none;
+    height: 60px;
+    width: 200px;
+    color: #ddf2f5;
+    background-color: #1c8dc5;
+    font-size: 25px;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 30px;
+    border: none;
+    transition: all 0.3s linear;
+}
+
+.btn_reset:hover {
+    background-color: #4b8e0a;
+}
+
+.btn_diff_words:hover {
+    background-color: #4b8e0a;
+}
+
+
 @media (min-width: 768px) and (max-width: 1279px) {
     .header {
         padding-right: 20px;
@@ -412,6 +497,33 @@ body {
 
     .words_card {
         margin: 0 auto;
+    }
+
+    .no-grid{
+        display: block;
+     }
+
+     .stat_table{
+        font-size: 15px;
+    }
+    
+    .stat_table th{
+        padding: 5px;
+    }
+    
+    .stat_table td{
+        padding: 5px;
+    }
+    
+    .btn_reset{
+        height: 50px;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    
+    .btn_diff_words{
+        height: 50px;
+        font-size: 20px;
     }
 }
 
@@ -445,10 +557,42 @@ body {
         margin: 20px auto;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 50px 30px;
+        gap: 30px 30px;
     }
 
     .words_card {
         margin: 0 auto;
     }
+
+    .stat_table{
+        font-size: 7px;
+    }
+    
+    .stat_table th{
+        padding: 0px;
+    }
+    
+    .stat_table td{
+        padding: 0px;
+    }
+    
+    .cont_btn{
+        margin: 0px auto;
+        justify-content: space-between;
+    }
+    
+    
+    .btn_reset{
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    
+    .btn_diff_words{
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+    }
+    
 }

@@ -3,6 +3,7 @@ import { modules } from "../data/cards.js";
 import { checkGame } from './checkGame.js';
 import { audioWord, rotateWord } from './wordFuncrions.js';
 
+
 function createNavItem(text, id, nav) {
     const navLink = document.createElement('a');
     navLink.classList.add('header_link');
@@ -79,7 +80,37 @@ function openCategory(id) {
 /*statistics*/
 function staticticsPage() {
     const main = document.getElementById('main');
+    main.classList.remove('words_page');
     main.innerHTML = '';
+    main.classList.add('no-grid');
+    checkGame();
+    const btn_cont = document.createElement('div');
+    btn_cont.classList.add('cont_btn');
+    const difWords = document.createElement('button');
+    difWords.textContent = 'Difficult words';
+    difWords.classList.add('btn_diff_words');
+    btn_cont.append(difWords);
+    main.append(btn_cont);
+
+    const reset = document.createElement('button');
+    reset.classList.add('btn_reset');
+    reset.textContent = 'Reset stats';
+    btn_cont.append(reset);
+
+    const table = document.createElement('table');
+    table.classList.add('stat_table');
+    table.innerHTML = ` <thead> <tr> <th>Category</th>
+    <th>Word</th> <th>Translation</th> <th>Train</th> <th>Correct</th> <th>Mistakes</th> <th>%</th></tr> </thead>`;
+    for (let i = 1; i < cards.length - 1; i++){
+        for (let j = 0; j < cards[i].length; j++){
+            const line = document.createElement('tr');
+            line.innerHTML = `<td>${cards[0][i-1]}</td><td>${cards[i][j].word}</td><td>${cards[i][j].translation}</td>
+            <td>0</td><td>0</td>
+            <td>0</td><td>100</td>`;
+            table.append(line);
+        }
+    }
+    main.append(table);
 }
 
 
@@ -93,9 +124,13 @@ document.addEventListener('click', (event) => {
     if (event.target.closest('.nav')) {
         const target = event.target.closest('.header_link');
         if (target != null) {
-            if (target.id == 'mainPage') createCards();
+            if (target.id == 'mainPage') {
+                createCards();
+                main.classList.remove('no-grid');}
             else if (target.id == 'statistics') staticticsPage();
-            else if (+target.id > 0 && +target.id < 9) openCategory(target.id);
+            else if (+target.id > 0 && +target.id < 9) {
+                openCategory(target.id);
+                main.classList.remove('no-grid');}
         }
     }
     if (event.target.closest('.button_rotate')) {
@@ -103,7 +138,7 @@ document.addEventListener('click', (event) => {
         const wordTrans = target.querySelector(".word_transcript");
         audioWord(cards[target.id.split('-')[1]][event.target.closest('.word').id.split('-')[0]]);
         target.classList.add('word_active');
-    } else if (event.target.closest('.front')) {
+    } else if (event.target.closest('.front') && !event.target.closest('.remove_translation')) {
         const target = event.target.closest('.word');
         const numPage = target.id.split('-')[1];
         audioWord(cards[numPage][target.id.split('-')[0]]);
