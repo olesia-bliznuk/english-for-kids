@@ -46,7 +46,7 @@ function createCards() {
 }
 
 /*MainPageOpen*/
-function mainPageOpen() {
+export function mainPageOpen() {
     createNavigation();
     createCards();
 }

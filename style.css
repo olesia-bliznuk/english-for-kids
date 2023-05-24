@@ -393,46 +393,46 @@ body {
 }
 
 
-.remove_translation button{
+.remove_translation button {
     display: none;
 }
 
-.remove_translation h4{
+.remove_translation h4 {
     display: none;
 }
 
 /*statictics*/
 
-.no-grid{
-   display: block;
+.no-grid {
+    display: block;
 }
 
-.stat_table{
+.stat_table {
     background-color: #1c8dc5;
-    margin: auto; 
+    margin: auto;
     text-align: center;
     border-radius: 5px;
     color: #513216;
     font-size: 25px;
 }
 
-.stat_table th{
+.stat_table th {
     background-color: rgba(145, 213, 224, .4);
     padding: 10px;
     border-radius: 5px;
 }
 
-.stat_table td{
+.stat_table td {
     background-color: rgba(145, 213, 224, .7);
     padding: 10px;
     border-radius: 5px;
 }
 
-.stat_table tr:hover{
+.stat_table tr:hover {
     background-color: #ddf2f5;
 }
 
-.cont_btn{
+.cont_btn {
     margin: 20px auto;
     width: 70%;
     display: flex;
@@ -440,7 +440,7 @@ body {
 }
 
 
-.btn_reset{
+.btn_reset {
     cursor: pointer;
     text-decoration: none;
     height: 60px;
@@ -454,7 +454,7 @@ body {
     transition: all 0.3s linear;
 }
 
-.btn_diff_words{
+.btn_diff_words {
     cursor: pointer;
     text-decoration: none;
     height: 60px;
@@ -476,6 +476,34 @@ body {
     background-color: #4b8e0a;
 }
 
+
+.inactive-word {
+    pointer-events: none;
+    background: rgba(41, 41, 41, 0.6);
+}
+
+.inactive-word .word_image {
+    opacity: 0.4;
+}
+
+.game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+.img-great {
+    height: 450px;
+    width: 450px;
+}
+
+.num-mistakes{
+    font-size: 32px;
+    color: #513216;
+    margin: 0px 30px;
+}
 
 @media (min-width: 768px) and (max-width: 1279px) {
     .header {
@@ -499,29 +527,29 @@ body {
         margin: 0 auto;
     }
 
-    .no-grid{
+    .no-grid {
         display: block;
-     }
+    }
 
-     .stat_table{
+    .stat_table {
         font-size: 15px;
     }
-    
-    .stat_table th{
+
+    .stat_table th {
         padding: 5px;
     }
-    
-    .stat_table td{
+
+    .stat_table td {
         padding: 5px;
     }
-    
-    .btn_reset{
+
+    .btn_reset {
         height: 50px;
         font-size: 20px;
         margin-left: 20px;
     }
-    
-    .btn_diff_words{
+
+    .btn_diff_words {
         height: 50px;
         font-size: 20px;
     }
@@ -564,35 +592,35 @@ body {
         margin: 0 auto;
     }
 
-    .stat_table{
+    .stat_table {
         font-size: 7px;
     }
-    
-    .stat_table th{
+
+    .stat_table th {
         padding: 0px;
     }
-    
-    .stat_table td{
+
+    .stat_table td {
         padding: 0px;
     }
-    
-    .cont_btn{
+
+    .cont_btn {
         margin: 0px auto;
         justify-content: space-between;
     }
-    
-    
-    .btn_reset{
+
+
+    .btn_reset {
         height: 50px;
         width: 100%;
         font-size: 20px;
         margin-left: 20px;
     }
-    
-    .btn_diff_words{
+
+    .btn_diff_words {
         height: 50px;
         width: 100%;
         font-size: 20px;
     }
-    
+
 }
