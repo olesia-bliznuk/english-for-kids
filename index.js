@@ -1,5 +1,5 @@
-import './style.css'
-import './src/js/checkGame'
-import './src/js/burger'
-import './src/js/game'
-import './src/js/main'
+import './style.css';
+import './src/js/burger';
+import './src/js/game';
+import './src/js/gameActivities';
+import './src/js/main';

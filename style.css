@@ -174,23 +174,23 @@ body {
         0 1px 1px #ddf2f5,
         -1px 0 1px #ddf2f5,
         0 -1px 1px #ddf2f5;
-    margin: 0px;
+    margin: 0px; 
     margin-left: -140px;
 }
 
 
 /*start button*/
 .header_category {
-    height: 60px;
-    position: relative;
     display: flex;
     justify-content: space-between;
     width: 75%;
     margin: 20px auto;
+     /* height: 60px; 
+     position: relative;  */
 }
 
 .header_category h2 {
-    font-size: 45px;
+     font-size: 45px;
     font-weight: 800;
     color: #1c8dc5;
     text-shadow: 2px 0 2px #ddf2f5,
@@ -203,7 +203,6 @@ body {
 .start_button {
     cursor: pointer;
     text-decoration: none;
-    height: 60px;
     width: 160px;
     color: #ddf2f5;
     background-color: #1c8dc5;
@@ -211,14 +210,7 @@ body {
     font-family: 'Comfortaa', cursive;
     border-radius: 30px;
     border: none;
-    transition: all 0.3s linear;
-
-    /*margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);*/
+    transition: all 0.3s linear; 
 }
 
 .start_button:hover {
@@ -505,6 +497,16 @@ body {
     margin: 0px 30px;
 }
 
+.stars_cont{
+     margin: 0 auto;
+    padding: 5px;
+    text-align: center; 
+}
+
+.stars_cont img{
+    height: 50px;
+}
+
 @media (min-width: 768px) and (max-width: 1279px) {
     .header {
         padding-right: 20px;
@@ -568,7 +570,6 @@ body {
     }
 
     .header_category {
-        height: 90px;
         flex-direction: column;
         width: 75%;
         margin: 10px auto;
