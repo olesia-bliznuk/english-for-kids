@@ -219,7 +219,7 @@ body {
 
 /**/
 
-.main {
+.main_cont {
     width: 80%;
     margin: 20px auto;
     display: grid;
@@ -507,6 +507,15 @@ body {
     height: 50px;
 }
 
+.noWords{
+    font-size: 35px;
+    color: #4b8e0a;
+}
+
+th{
+    cursor: pointer;
+}
+
 @media (min-width: 768px) and (max-width: 1279px) {
     .header {
         padding-right: 20px;
@@ -517,7 +526,7 @@ body {
         margin-left: -60px;
     }
 
-    .main {
+    .main_cont {
         width: 80%;
         margin: 20px auto;
         display: grid;
@@ -581,7 +590,7 @@ body {
         margin-bottom: 15px;
     }
 
-    .main {
+    .main_cont {
         width: 80%;
         margin: 20px auto;
         display: grid;

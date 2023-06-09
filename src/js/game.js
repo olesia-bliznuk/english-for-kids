@@ -3,6 +3,8 @@ import { cards } from "../data/cards.js";
 import { audioWord } from "./gameActivities.js";
 import { mainPageOpen } from "./main.js";
 import {addStar} from "./gameActivities.js";
+import {addToCorrectWord} from "./statistics.js";
+import {addToMistakeWord} from "./statistics.js";
 const errorSound = new Audio('./data/audio/error.mp3');
 const correctAudio = new Audio('./data/audio/correct.mp3');
 const successAudio = new Audio('./data/audio/success.mp3');
@@ -54,9 +56,11 @@ export function checkWord(word) {
     if (randomArr.length == 0) return;
     if (cards[word.id.split('-')[1]][word.id.split('-')[0]].word == randomArr[0].word)
         {
-            randomArr.shift();
             addStar(true);
+            //correct
+            addToCorrectWord(word.id.split('-')[1], word.id.split('-')[0]);
             correctAudio.play();
+            randomArr.shift();
             word.classList.add('inactive-word');
             if (randomArr.length != 0) audioWord(randomArr[0]);
             if (randomArr.length == 0) gameOver();
@@ -64,6 +68,8 @@ export function checkWord(word) {
     else
         {
             errorSound.play();
+            //mistake
+            addToMistakeWord(word.id.split('-')[1], word.id.split('-')[0]);
             addStar(false);
             errorGame ++;
         }
@@ -89,8 +95,11 @@ function openWords() {
 export function checkGame() {
     errorGame = 0;
     randomArr = [];
+    if(switchInput.checked) document.querySelector("#switchText").textContent = 'Play'; 
+    else document.getElementById("switchText").textContent = 'Train';
     starsCont.innerHTML = '';
     let category = '';
+    if (main.classList.contains('hardWords')) return;
     if (document.querySelector('.word'))
         category = modules[document.querySelector('.word').id.split('-')[1] - 1].module;
     headerCategory.innerHTML = '';
@@ -98,13 +107,11 @@ export function checkGame() {
         document.querySelector("#switchText").textContent = 'Play';
         if (main.classList.contains('words_page')) {
             headerCategory.innerHTML += ` <h2 id="nameCategory">${category}</h2>`;
-           
             const button = document.createElement('button');
             button.classList.add('start_button');
             button.id = 'startCategory';
             button.textContent = 'Play';
             headerCategory.append(button);
-
             button.addEventListener('click', (event) => startGame());
             isFirstClick = true;
             closeWords();
