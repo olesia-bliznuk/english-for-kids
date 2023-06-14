@@ -1,0 +1,623 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url(./src/data/img/background.jpg);
+    background-size: cover;
+    font-family: 'Comfortaa', cursive;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.stopScrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.backgroundBlur {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(41, 41, 41, 0.6);
+    z-index: 8;
+}
+
+/*header*/
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    background-color: rgba(145, 213, 224, .7);
+    padding-right: 43px;
+    padding-left: 43px;
+}
+
+/*switch*/
+
+.switch {
+    display: flex;
+    margin-top: 25px;
+    margin-left: 10px;
+    font-size: 25px;
+    color: #513216;
+}
+
+.switch h3 {
+    width: 86px;
+    margin: 0px;
+    line-height: 40px;
+    padding-right: 10px;
+}
+
+.switchInput {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    appearance: none;
+    background: #1c8dc5;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+}
+
+.switchInput:hover {
+    cursor: pointer;
+}
+
+.switchInput:checked {
+    background: #4b8e0a;
+}
+
+.switchInput:before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #ddf2f5;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+    transition: all 0.3s linear;
+}
+
+.switchInput:checked:before {
+    left: 40px;
+}
+
+/*nav*/
+
+.nav {
+    position: absolute;
+    left: -320px;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background: rgba(145, 213, 224, .9);
+    border-radius: 10px;
+    padding-top: 0px;
+    padding-left: 0px;
+    transition: transform .5s, visibility .5s;
+    will-change: transform;
+    padding-top: 85px;
+    z-index: 10;
+}
+
+.headerLink {
+    font-size: 25px;
+    text-decoration: none;
+    padding: 0;
+    padding-top: 10px;
+    line-height: 140%;
+    color: #ddf2f5;
+    padding: 10px;
+    background-color: #1c8dc5;
+    border-radius: 20px;
+    width: 80%;
+    margin-left: 22px;
+    margin-top: 10px;
+    transition: all 0.3s linear;
+
+}
+
+.headerLink:hover {
+    background-color: #ddf2f5;
+    color: #1c8dc5;
+    cursor: pointer;
+}
+
+.header.open .burgerLogo {
+    transform: translateX(-100%);
+    visibility: visible;
+}
+
+.header.open .nav {
+    transform: translateX(100%);
+    visibility: visible;
+}
+
+/*headline*/
+
+.headline {
+    font-family: 'Pacifico', cursive;
+    font-size: 55px;
+    color: #1c8dc5;
+    text-shadow: 1px 0 1px #ddf2f5,
+        0 1px 1px #ddf2f5,
+        -1px 0 1px #ddf2f5,
+        0 -1px 1px #ddf2f5;
+    margin: 0px;
+}
+
+
+/*start button*/
+
+.headerCategory {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 20px auto;
+}
+
+.headerCategory h2 {
+    font-size: 45px;
+    font-weight: 800;
+    color: #1c8dc5;
+    text-shadow: 2px 0 2px #ddf2f5,
+        0 2px 2px #ddf2f5,
+        -2px 0 2px #ddf2f5,
+        0 -2px 2px #ddf2f5;
+    margin: 0;
+}
+
+.startButton {
+    cursor: pointer;
+    text-decoration: none;
+    width: 160px;
+    color: #ddf2f5;
+    background-color: #1c8dc5;
+    font-size: 25px;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 30px;
+    border: none;
+    transition: all 0.3s linear;
+}
+
+.startButton:hover {
+    background-color: #4b8e0a;
+}
+
+/*main*/
+
+.mainCont {
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px 30px;
+}
+
+.wordsCard {
+    width: 240px;
+    height: 287px;
+    background-color: #ddf2f5;
+    border: 2px solid #513216;
+    border-radius: 20px;
+    text-align: center;
+    color: #513216;
+    font-size: 25px;
+    transition: transform, 0.3s, box-shadow, 0.5s;
+}
+
+.wordsCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 10px 10px 5px rgba(252, 252, 252, 0.6);
+    transition: transform, 0.3s, box-shadow, 0.5s;
+    cursor: pointer;
+}
+
+.word:hover {
+    transform: translateY(0px);
+    box-shadow: 5px 5px 5px 5px #1c8dc5;
+    transition: transform, 0.3s, box-shadow, 0.5s;
+    cursor: pointer;
+}
+
+.wordsCard img {
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+}
+
+.wordsCard h4 {
+    margin: 0;
+}
+
+.wordsCard h5 {
+    color: #4b8e0a;
+    margin: 10px;
+
+}
+
+.word img {
+    height: 160px;
+    width: 240px;
+}
+
+.wordTranscript {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px;
+}
+
+.buttonRotate {
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: none;
+    background-image: url(./src/data/img/repeat.svg);
+    background-size: cover;
+    height: 37px;
+    width: 30px;
+    border: none;
+}
+
+.buttonRotate:hover {
+    animation-name: rotate;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(-360deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*rotate card*/
+
+.front,
+.back {
+    overflow: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform .6s linear;
+}
+
+.front {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.back {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.wordActive:hover>.front {
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.wordActive:hover>.back {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+
+/* burger */
+
+.burger {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    z-index: 100;
+    cursor: pointer;
+    top: 20px;
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #1c8dc5;
+    transition: background-color .3s, opacity .3s, transform .5s;
+    will-change: transform;
+}
+
+.burger:hover span {
+    background-color: #ddf2f5;
+}
+
+.burger span:nth-child(1) {
+    transform: translateY(-15px);
+}
+
+.burger span:nth-child(3) {
+    transform: translateY(15px);
+}
+
+.header.open .burger span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+
+.header.open .burger span:nth-child(2) {
+    opacity: 0;
+}
+
+.header.open .burger span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+.removeTranslation button {
+    display: none;
+}
+
+.removeTranslation h4 {
+    display: none;
+}
+
+/*statictics*/
+
+.noGrid {
+    display: block;
+}
+
+.statTable {
+    background-color: #1c8dc5;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    color: #513216;
+    font-size: 25px;
+}
+
+.statTable th {
+    background-color: rgba(145, 213, 224, .4);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.statTable td {
+    background-color: rgba(145, 213, 224, .7);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.statTable tr:hover {
+    background-color: #ddf2f5;
+}
+
+.contBtn {
+    margin: 20px auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btnReset {
+    cursor: pointer;
+    text-decoration: none;
+    height: 60px;
+    width: 200px;
+    color: #ddf2f5;
+    background-color: #1c8dc5;
+    font-size: 25px;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 30px;
+    border: none;
+    transition: all 0.3s linear;
+}
+
+.btnDiffWords {
+    cursor: pointer;
+    text-decoration: none;
+    height: 60px;
+    width: 200px;
+    color: #ddf2f5;
+    background-color: #1c8dc5;
+    font-size: 25px;
+    font-family: 'Comfortaa', cursive;
+    border-radius: 30px;
+    border: none;
+    transition: all 0.3s linear;
+}
+
+.btnReset:hover {
+    background-color: #4b8e0a;
+}
+
+.btnDiffWords:hover {
+    background-color: #4b8e0a;
+}
+
+.inactiveWord {
+    pointer-events: none;
+    background: rgba(41, 41, 41, 0.6);
+}
+
+.inactiveWord .wordImage {
+    opacity: 0.4;
+}
+
+.gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 500px;
+    width: 500px;
+    transform: translate(-50%, -50%);
+}
+
+.imgGreat {
+    height: 450px;
+    width: 450px;
+}
+
+.numMistakes {
+    font-size: 32px;
+    color: #513216;
+    margin: 0px 30px;
+}
+
+.starsСont {
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.starsCont img {
+    height: 50px;
+}
+
+.noWords {
+    font-size: 35px;
+    color: #4b8e0a;
+}
+
+th {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .header {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .mainCont {
+        width: 80%;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px 30px;
+    }
+
+    .wordsCard {
+        margin: 0 auto;
+    }
+
+    .noGrid {
+        display: block;
+    }
+
+    .statTable {
+        font-size: 15px;
+    }
+
+    .statTable th {
+        padding: 5px;
+    }
+
+    .statTable td {
+        padding: 5px;
+    }
+
+    .btnReset {
+        height: 50px;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .btnDiffWords {
+        height: 50px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .header {
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 30px;
+    }
+
+    .headline {
+        display: none;
+    }
+
+    .headerCategory {
+        flex-direction: column;
+        width: 75%;
+        margin: 10px auto;
+        align-items: center;
+    }
+
+    .headerCategory h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .mainCont {
+        width: 80%;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px 30px;
+    }
+
+    .wordsCard {
+        margin: 0 auto;
+    }
+
+    .statTable {
+        font-size: 7px;
+    }
+
+    .statTable th {
+        padding: 0px;
+    }
+
+    .stat_table td {
+        padding: 0px;
+    }
+
+    .contBtn {
+        margin: 0px auto;
+        justify-content: space-between;
+    }
+
+
+    .btnReset {
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .btnDiffWords {
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .gameOver {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 320px;
+        width: 320px;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgGreat {
+        height: 250px;
+        width: 250px;
+    }
+
+}
