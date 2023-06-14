@@ -30,24 +30,24 @@ function hardWords() {
         main.innerHTML = `<h2 class="noWords">No words to repeat</h2>`;
     else {
         main.classList.remove("noGrid");
-        for (let i = 0; i < arrHardWords.length; i++) {
+        arrHardWords.forEach((item) => {
             const wordsCard = document.createElement("div");
-            wordsCard.id = `${arrHardWords[i].id}`;
+            wordsCard.id = `${item.id}`;
             wordsCard.classList.add("wordsCard");
             wordsCard.classList.add("word");
             wordsCard.addEventListener("mouseleave", () => {
                 wordsCard.classList.remove("wordActive");
             });
             wordsCard.innerHTML = `<div class="front">
-        <img class="wordImage" src="${arrHardWords[i].image}">
-        <div class="wordTranscript"><h4>${arrHardWords[i].word}</h4>
-        <button class="buttonRotate"></button></div>
-        </div>
-        <div class="back"><img class="wordImage" src="${arrHardWords[i].image}">
-        <div class="wordTranscript"><h4>${arrHardWords[i].translation}</h4>
-        </div>`;
+            <img class="wordImage" src="${item.image}">
+            <div class="wordTranscript"><h4>${item.word}</h4>
+            <button class="buttonRotate"></button></div>
+            </div>
+            <div class="back"><img class="wordImage" src="${item.image}">
+            <div class="wordTranscript"><h4>${item.translation}</h4>
+            </div>`;
             main.append(wordsCard);
-        }
+        });
     }
 }
 
@@ -97,7 +97,6 @@ export function createStatData() {
     }
 }
 
-
 function sortTable(index, isSorted) {
     const table = document.querySelector("#statTable");
     let sortedRows = Array.from(table.rows).slice(1);
@@ -127,10 +126,9 @@ function sortTable(index, isSorted) {
         table.deleteRow(1);
     }
 
-    for (let i = 0; i < sortedRows.length; i++) {
-        table.appendChild(sortedRows[i]);
-    }
-
+    sortedRows.forEach((item) => {
+        table.appendChild(item);
+    });
 }
 
 export function createStatPage() {
@@ -163,13 +161,14 @@ export function createStatPage() {
     table.id = "statTable";
     table.innerHTML = ` <thead class="headerTable">  <th>Category</th>
      <th>Word</th> <th>Translation</th> <th>Train</th> <th>Correct</th> <th>Mistakes</th> <th>%</th> </thead>`;
-    for (let i = 0; i < dataStat.length; i++) {
+
+    dataStat.forEach((item) => {
         const line = document.createElement("tr");
-        line.innerHTML = `<td>${dataStat[i].category}</td><td>${dataStat[i].word}</td><td>${dataStat[i].translation}</td>
-            <td>${dataStat[i].train}</td><td>${dataStat[i].correct}</td>
-            <td>${dataStat[i].mistakes}</td><td>${dataStat[i].per}</td>`;
+        line.innerHTML = `<td>${item.category}</td><td>${item.word}</td><td>${item.translation}</td>
+            <td>${item.train}</td><td>${item.correct}</td>
+            <td>${item.mistakes}</td><td>${item.per}</td>`;
         table.append(line);
-    }
+    });
     table.addEventListener("click", (event) => {
         if (event.target.closest("th")) {
             const index = event.target.cellIndex;

@@ -94,9 +94,9 @@ body {
 /*nav*/
 
 .nav {
-    position: fixed;
+    position: absolute;
+    left: -320px;
     top: 0;
-    right: -320px;
     width: 320px;
     height: 100vh;
     display: flex;
@@ -141,7 +141,7 @@ body {
 }
 
 .header.open .nav {
-    transform: translateX(-100%);
+    transform: translateX(100%);
     visibility: visible;
 }
 
@@ -156,7 +156,6 @@ body {
         -1px 0 1px #ddf2f5,
         0 -1px 1px #ddf2f5;
     margin: 0px;
-    margin-left: -140px;
 }
 
 
@@ -498,10 +497,6 @@ th {
     .header {
         padding-right: 20px;
         padding-left: 20px;
-    }
-
-    .headline {
-        margin-left: -60px;
     }
 
     .mainCont {

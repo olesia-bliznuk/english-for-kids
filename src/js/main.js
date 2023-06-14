@@ -33,13 +33,13 @@ function createCards() {
     const starsCont = document.querySelector("#stars");
     main.classList.remove("wordsPage");
     main.innerHTML = "";
-    for (let i = 0; i < modules.length; i++) {
-        main.innerHTML += `<div id="${i + 1}" class="wordsCard">
-        <div><img src="${modules[i].image}"></div>
-        <h4>${modules[i].module}</h4>
+    modules.forEach((item, index) => {
+        main.innerHTML += `<div id="${index + 1}" class="wordsCard">
+        <div><img src="${item.image}"></div>
+        <h4>${item.module}</h4>
         <h5>8 cards</h5>
         </div>`;
-    }
+    });
     headerCategory.innerHTML = "";
     starsCont.innerHTML = "";
 }
@@ -55,9 +55,9 @@ export function mainPageOpen() {
 function openCategory(id) {
     main.classList.add("wordsPage");
     main.innerHTML = "";
-    for (let i = 0; i < cards[id].length; i++) {
+    cards[id].forEach((item, index) => {
         const wordsCard = document.createElement("div");
-        wordsCard.id = `${i}-${id}`;
+        wordsCard.id = `${index}-${id}`;
         wordsCard.classList.add("wordsCard");
         wordsCard.classList.add("word");
         wordsCard.addEventListener("mouseleave", () => {
@@ -65,15 +65,15 @@ function openCategory(id) {
         });
         wordsCard.addEventListener("click", (event) => checkWord(wordsCard));
         wordsCard.innerHTML = `<div class="front">
-        <img class="wordImage" src="${cards[id][i].image}">
-        <div class="wordTranscript"><h4>${cards[id][i].word}</h4>
+        <img class="wordImage" src="${item.image}">
+        <div class="wordTranscript"><h4>${item.word}</h4>
         <button class="buttonRotate"></button></div>
         </div>
-        <div class="back"><img class="wordImage" src="${cards[id][i].image}">
-        <div class="wordTranscript"><h4>${cards[id][i].translation}</h4>
+        <div class="back"><img class="wordImage" src="${item.image}">
+        <div class="wordTranscript"><h4>${item.translation}</h4>
         </div>`;
         main.append(wordsCard);
-    }
+    });
     checkGame();
 }
 
@@ -90,6 +90,7 @@ document.addEventListener("click", (event) => {
         const target = event.target.closest(".wordsCard");
         openCategory(target.id);
     }
+
     //Open links in nav 
     if (event.target.closest(".nav")) {
         const target = event.target.closest(".headerLink");
@@ -106,6 +107,7 @@ document.addEventListener("click", (event) => {
             }
         }
     }
+    
     //Rotate cards with words
     if (event.target.closest(".buttonRotate")) {
         const target = event.target.closest(".word");
